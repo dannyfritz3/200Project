@@ -1,0 +1,47 @@
+import java.util.*;
+import java.io.*;
+
+public class GameLayout {
+  
+  private Map<String, Set<String>> connections;
+  private Map<String, LocationDescription> descriptions;
+  
+  public GameLayout(String fileDescriptions, String fileConnections)
+  {
+    try {
+      Scanner scanner1 = new Scanner(new File(fileDescriptions));
+      Scanner scanner2 = new Scanner(new File(fileConnections));
+      
+      while(scanner1.hasNext())
+      {
+        String value1 = scanner1.nextLine();
+        while(!value1.equals("_"))
+        {
+          String name = scanner1.nextLine();
+          boolean visited = scanner1.nextBoolean();
+          boolean hostile = scanner1.nextBoolean();
+          int population = Integer.parseInt(scanner1.nextLine());
+          String description = scanner1.nextLine();
+          String race = scanner1.nextLine();
+          value1 = scanner1.nextLine();
+        }
+      }
+      
+      while(scanner2.hasNext())
+      {
+        String locationName = scanner2.nextLine();
+        int connections = Integer.parseInt(scanner2.nextLine());
+        ArrayList<String> locations = new ArrayList<String>();
+        String value2 = scanner1.nextLine();
+        while(!value2.equals("_"))
+        {
+          locations.add(value2);
+          value2 = scanner1.nextLine();
+        }
+      }
+    }
+    catch (FileNotFoundException fnfe) {
+      System.err.println("File not found");
+    }
+  }
+}

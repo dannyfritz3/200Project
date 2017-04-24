@@ -1,0 +1,16 @@
+Outline:
+
+Location ID
+Visited : boolean
+Hostile : boolean
+MainShip
+Planet1
+Planet2
+Planet3
+Planet4
+Planet5
+Planet6
+Planet7
+Planet8
+PlanetX
+BlackHole
